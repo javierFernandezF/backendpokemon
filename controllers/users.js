@@ -3,7 +3,6 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 
-
 const signIn = async (req, res) => {
     try {
       const { mail, name, password } = req.body;
@@ -73,6 +72,8 @@ const login = async (req, res) => {
         name: name,
         mail: user.rows[0].mail
       }, "EstaEsLaClaveSecretaDeLaMejorPokedexDelBootcamp" );
+
+
 
       return res.status(200).json({ success: true, message: "Welcome to your Pokedex!", token: token});
     } catch (error) {

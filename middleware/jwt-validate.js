@@ -6,6 +6,13 @@ const verifyToken = (req, res, next) => {
         if(!token) {
             return res.status(403).json({error: "Access denied."})
         }
+
+        const verified = jwt.verify(token, "EstaEsLaClaveSecretaDeLaMejorPokedexDelBootcamp");
+
+        req.user = verified;
+
+        next();
+
     } catch (error) {
         return next(error)
     }
