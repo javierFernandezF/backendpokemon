@@ -39,7 +39,7 @@ npm install
 ```
 ## PostgreSQL
 
-En tu IDE de preferencia, crear una base de datos *Pokemones* que contenga dos tablas:
+En tu IDE de preferencia, crear una base de datos *Pokemones* que contenga tres tablas:
 
 ```
 CREATE TABLE public."poketabla"(
@@ -78,17 +78,17 @@ password VARCHAR (500)
 
 ```
 
-Observación: Para trabajar con esta base de datos es necesario unir la tabla "poketabla" a la tabla "datamove". La propiedad *idpokemon* de la tabla "poketabla" hace referencia a la propiedad *idpokemondatamoves* de la tabla "datamoves".
+Observación: Para trabajar con esta base de datos es necesario unir la tabla "poketabla" a la tabla "datamoves". La propiedad *idpokemon* de la tabla "poketabla" hace referencia a la propiedad *idpokemondatamoves* de la tabla "datamoves".
 
 ## Conexión a la base de datos
 
 Definir en .env las variables:
 
-DATABASE_USER=""
-DATABASE_HOST=""
-DATABASE_PASSWORD=""
-DATABASE_DATABASE=""
-DATABASE_PORT=""
+- DATABASE_USER=""
+- DATABASE_HOST=""
+- DATABASE_PASSWORD=""
+- DATABASE_DATABASE=""
+- DATABASE_PORT=""
 
 ## Rutas
 
@@ -109,7 +109,7 @@ npm run dev
 
 ## Front-end
 
-Repetir comandos de clonar e instalar en una nueva carpeta con el link correspondiente al Front-end. Luego levantar en el localhost cn el siguiente comando:
+Repetir comandos de clonar e instalar en una nueva carpeta con el link correspondiente al Front-end. Luego levantar en el localhost con el siguiente comando:
 
 ```
 npm start
