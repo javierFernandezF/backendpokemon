@@ -91,14 +91,10 @@ Definir en .env las variables:
 ## Rutas
 
 Esta base de datos cuenta con 4 rutas diferentes. Cada una de ellas, encargada de una función en particular. Las funciones son: 
-Obtener la lista total de pokemones:
-- http://localhost:3000/pokemones/obtener 
-Crear pokemones:
-- http://localhost:3000/pokemones/agregar 
-Registar usuario:
-- http://localhost:3000/users/signin
-Ingresar como usuario: 
-- http://localhost:3000/users/login 
+- Obtener la lista total de pokemones: http://localhost:3000/pokemones/obtener 
+- Crear pokemones: http://localhost:3000/pokemones/agregar 
+- Registar usuario: http://localhost:3000/users/signin
+- Ingresar como usuario: http://localhost:3000/users/login 
 
 ## Levantar backend en LocalHost
 
