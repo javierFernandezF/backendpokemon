@@ -13,7 +13,6 @@ const obtener = async (req, res) => {
   }
 };
 
-
 const agregar = async (req, res) => {
   try {
     const {
@@ -86,8 +85,8 @@ const agregar = async (req, res) => {
       err.errors;
       if (err.errors) {
         return res.status(400).json({
-          data: err.errors,
-          message: "Dates are invalid",
+          data: [],
+          message: err.errors,
           success: false,
         });
       }
@@ -135,9 +134,11 @@ const agregar = async (req, res) => {
       [idpokemon, move1, move2]
     );
 
-    return res
-      .status(200)
-      .json({ data: [newPokemon, newMoves], message: "Success" });
+    return res.status(200).json({
+      data: [newPokemon, newMoves],
+      message: "Success",
+      success: true,
+    });
   } catch (error) {
     console.error(error);
   }
