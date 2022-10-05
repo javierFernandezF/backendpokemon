@@ -2,8 +2,6 @@
 
 Este es el back-end de la app Pókedex. Aquí se conectan [Pokedex Front-end](https://github.com/PilarCiganda/Pokedex.git) y [Pokedex Back-end](https://github.com/javierFernandezF/backendpokemon.git)
 
-## Contenido
-
 El proyecto está realizado en:
 
 - [Node.js](https://nodejs.org/es/)
@@ -90,14 +88,6 @@ Definir en .env las variables:
 - DATABASE_DATABASE=""
 - DATABASE_PORT=""
 
-## Rutas
-
-Esta base de datos cuenta con 4 rutas diferentes. Cada una de ellas, encargada de una función en particular. Las funciones son: 
-- Mostar los pokemones obtenidos de la pokeapi.
-- Crear pokemones.
-- Registarse, creando usuario.
-- Ingresar como usuario. 
-
 ## Levantar backend en LocalHost
 
 Ejecutar el comando
@@ -107,12 +97,14 @@ npm run dev
 
 ```
 
-## Front-end
+## Rutas
 
-Repetir comandos de clonar e instalar en una nueva carpeta con el link correspondiente al Front-end. Luego levantar en el localhost con el siguiente comando:
+Esta base de datos cuenta con 4 rutas diferentes. Cada una de ellas, encargada de una función en particular. Las funciones son: 
+- Obtener la lista total de pokemones: http://localhost:3000/pokemones/obtener 
+- Crear pokemones: http://localhost:3000/pokemones/agregar 
+- Registar usuario: http://localhost:3000/users/signin
+- Ingresar como usuario: http://localhost:3000/users/login 
 
-```
-npm start
 
-```
+
 
