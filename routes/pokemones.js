@@ -5,6 +5,7 @@ const { obtener, agregar } = require("../controllers/pokemones");
 const { verifyToken } = require("../middleware/jwt-validate");
 
 router.get("/obtener", verifyToken, obtener)
-router.post("/agregar",  agregar)
+router.post("/agregar", verifyToken, agregar)
+
 
 module.exports = router;

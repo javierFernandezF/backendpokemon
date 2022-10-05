@@ -12,6 +12,7 @@ const obtener = async (req, res) => {
   }
 };
 
+
 const agregar = async (req, res) => {
   try {
     const {
@@ -35,8 +36,6 @@ const agregar = async (req, res) => {
       move2,
     } = req.body;
     
-    console.log(req.body)
-
     let newPokemon = {
         idpokemon,
         name,
