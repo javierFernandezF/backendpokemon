@@ -1,5 +1,6 @@
 const db = require("../db/index");
-const yup = require("yup");
+
+const validate = require("../middleware/yup-validate");
 
 const obtener = async (req, res) => {
   try {
@@ -61,37 +62,6 @@ const agregar = async (req, res) => {
       move2,
     };
 
-    let schema = yup.object().shape({
-      idpokemon: yup.number().integer().required().positive(),
-      name: yup.string().required(),
-      img: yup.string().required(),
-      type: yup.string().required(),
-      type2: yup.string(),
-      weight: yup.number().required().positive(),
-      height: yup.number().required().positive(),
-      description: yup.string().required(),
-      hp: yup.number().integer().required().positive().max(200),
-      atk: yup.number().integer().required().positive().max(200),
-      def: yup.number().integer().required().positive().max(200),
-      satk: yup.number().integer().required().positive().max(200),
-      sdef: yup.number().integer().required().positive().max(200),
-      spd: yup.number().integer().required().positive().max(200),
-      bckcolor: yup.string().required(),
-      bckcolor: yup.string(),
-    });
-
-    schema.validate(newPokemon).catch(function (err) {
-      err.name;
-      err.errors;
-      if (err.errors) {
-        return res.status(400).json({
-          data: [],
-          message: err.errors,
-          success: false,
-        });
-      }
-    });
-
     //Este control se deja porque revisa en la base de datos que no exista el id de pokemon.
 
     const verifyIdPokemon = await db.query(
@@ -140,7 +110,11 @@ const agregar = async (req, res) => {
       success: true,
     });
   } catch (error) {
-    console.error(error);
+    return res.status(400).json({
+      data: [],
+      message: error,
+      success: false,
+    });
   }
 };
 
