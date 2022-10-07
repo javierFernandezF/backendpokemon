@@ -14,6 +14,4 @@ app.use("/users", users)
 
 
 
-app.listen(3000, () => {
-    console.log(`corriendo en el puerto ${PORT}`)
-})
+module.exports = app;
